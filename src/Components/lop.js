@@ -25,7 +25,7 @@ const Lop = () => {
             <input className={styled.input} type="text" placeholder="Search" value={search} onChange={searchHandler}/>
             {
                 coins.length ?<div className={styled.cards}>
-                {searchCoins.map(item => <Cards id={item.id} data={item}/>)} </div>:
+                {searchCoins.map(item => <Cards key={item.id} data={item}/>)} </div>:
                 <h1 className={styled.loading}>Loading...</h1>
             }
         </div>
