@@ -44,7 +44,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    top: 50px;
+    top: 47px;
   }
 
   .after-list-menu:hover {
@@ -52,6 +52,6 @@
   }
 
   .dark-mode-icon {
-    @apply cursor-pointer border border-white border-solid p-2 rounded-full
+    @apply cursor-pointer border border-white border-solid p-2 rounded-full;
   }
 }
