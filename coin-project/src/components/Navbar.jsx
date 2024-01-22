@@ -7,7 +7,7 @@ import pages from "../../constant/pages";
 
 const Navbar = ({ setShowMenu }) => {
   return (
-    <div className="centering justify-between bg-stone-900 text-white font-vazirMedium p-4">
+    <div className="sticky top-0 centering justify-between bg-navbar text-white font-vazirMedium p-4">
       <FaBitcoin className="font-b text-4xl" />
 
       <ul className="hidden md:flex w-[70%]">

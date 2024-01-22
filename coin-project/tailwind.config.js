@@ -8,6 +8,11 @@ export default {
       vazirExtraBold: "vazirExtraBold",
       vazirRegular: "vazirRegular",
     },
+
+    boxShadow : {
+      slow : "0 2px 2px rgba(99 , 99 , 99 , 0.3)"
+    },
+
     extend: {
       animation: {
         borderItemsMenu: "borderItemsMenu .2s linear 1",
@@ -19,6 +24,10 @@ export default {
           "100%": { width: "90px" },
         },
       },
+
+      screens: {
+        xs : "450px"
+      }
     },
   },
   plugins: [],
