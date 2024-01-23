@@ -60,4 +60,12 @@
   .dark-mode-icon {
     @apply cursor-pointer border border-white border-solid p-2 rounded-full;
   }
+
+  .buttons-pagination button {
+    @apply mr-2 border border-solid border-blue-600 rounded-md p-1 size-8
+  }
+
+  .next-b {
+    @apply cursor-pointer ml-1 w-16 p-1 rounded-md bg-blue-600 text-center
+  }
 }
