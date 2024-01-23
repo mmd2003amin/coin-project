@@ -3,14 +3,18 @@ import { getCoinList } from "./services/cryptoAPI";
 import { PiChartLineDownBold, PiChartLineUpBold } from "react-icons/pi";
 import loading from "../assets/loading.gif";
 
-const CoinList = ({ data, setData, page }) => {
+const CoinList = ({ data, setData, page, search, currency }) => {
   const [isLoading, setIsLoading] = useState(true);
+
+  const searchData = data.filter((coin) =>
+    coin.name.toUpperCase().includes(search)
+  );
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         setIsLoading(true);
-        const fetching = await fetch(getCoinList(page));
+        const fetching = await fetch(getCoinList(page, currency));
         const toJson = await fetching.json();
         setData(toJson);
         setIsLoading(false);
@@ -19,7 +23,7 @@ const CoinList = ({ data, setData, page }) => {
       }
     };
     fetchData();
-  }, [page]);
+  }, [page, currency]);
 
   return (
     <>
@@ -37,7 +41,7 @@ const CoinList = ({ data, setData, page }) => {
             <h3>نمودار</h3>
           </div>
 
-          {data.map((coin) => (
+          {searchData.map((coin) => (
             <div
               key={coin.id}
               className="centering justify-between p-4 mt-2 bg-stone-900 md:bg-transparent hover:bg-stone-900 duration-150 cursor-pointer rounded-md"
@@ -51,7 +55,10 @@ const CoinList = ({ data, setData, page }) => {
               <h1 className="hidden md:flex">{coin.name}</h1>
               <h1 className="md:hidden">{coin.symbol.toUpperCase()}</h1>
 
-              <p>{coin.current_price} $</p>
+              <p>
+                {coin.current_price}
+                {currency === "usd" ? " $" : currency === "eur" ? " €" : " ¥"}
+              </p>
 
               <p
                 dir="ltr"
