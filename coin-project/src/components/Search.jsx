@@ -7,11 +7,11 @@ const Search = ({ currency , setCurrency, setSearch }) => {
       <select
         value={currency}
         onChange={(event) => setCurrency(event.target.value)}
-        className="bg-stone-900 before:bg-red-500 text-white p-4 rounded-md ml-2 outline-none"
+        className="bg-stone-900 text-white p-4 rounded-md ml-2 outline-none"
       >
         <option value="usd">USD</option>
         <option value="eur">EUR</option>
-        <option className="hover:bg-red-600" value="jpy">JPY</option>
+        <option value="jpy">JPY</option>
       </select>
 
       <input
