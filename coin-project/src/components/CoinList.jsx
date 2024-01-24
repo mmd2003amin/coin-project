@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { getCoinList } from "./services/cryptoAPI";
+import { getCoinList, marketChart } from "../services/cryptoAPI";
 import { PiChartLineDownBold, PiChartLineUpBold } from "react-icons/pi";
 import loading from "../assets/loading.gif";
-import { marketChart } from "./services/cryptoAPI";
 
 const CoinList = ({ page, search, currency, setChart }) => {
   const [data, setData] = useState([]);
@@ -12,13 +11,13 @@ const CoinList = ({ page, search, currency, setChart }) => {
     coin.name.toUpperCase().includes(search)
   );
 
-  const showChart = async(id) => {
+  const showChart = async (id , coin) => {
     try {
       const fetching = await fetch(marketChart(id));
       const toJson = await fetching.json();
-      setChart(toJson)
+      setChart({ ...toJson , coin });
     } catch {
-      setChart(null)
+      setChart(null);
     }
   };
 
@@ -55,7 +54,7 @@ const CoinList = ({ page, search, currency, setChart }) => {
 
           {searchData.map((coin) => (
             <div
-              onClick={() => showChart(coin.id)}
+              onClick={() => showChart(coin.id, coin)}
               key={coin.id}
               className="centering justify-between p-4 mt-2 bg-stone-900 md:bg-transparent hover:bg-stone-900 duration-150 cursor-pointer rounded-md"
             >

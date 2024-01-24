@@ -22,7 +22,7 @@ const App = () => {
       <Search currency={currency} setCurrency={setCurrency} setSearch={setSearch} />
       <CoinList page={page} search={search} currency={currency} setChart={setChart}/>
       <Pagination page={page} setPage={setPage}/>
-      {chart && <ChartBox setChart={setChart}/>}
+      {chart && <ChartBox chart={chart} setChart={setChart} currency={currency}/>}
     </div>
   );
 };

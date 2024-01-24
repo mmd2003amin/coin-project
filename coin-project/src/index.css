@@ -34,7 +34,7 @@
     @apply p-1.5 rounded-md border border-solid border-white w-[70px] cursor-pointer;
   }
 
-  .bg-navbar {
+  .bg-blur {
     background: rgba(28, 25, 23, 0.72);
     backdrop-filter: blur(20px);
   }
@@ -67,5 +67,13 @@
 
   .next-b {
     @apply cursor-pointer ml-1 w-16 p-1 rounded-md bg-blue-600 text-center
+  }
+
+  .buttons-chart button {
+    @apply border border-solid border-blue-600 rounded-md px-1 xs:px-3 py-1 mr-1.5 xs:mr-3 w-fit
+  }
+
+  .about-chart h5 {
+    @apply text-blue-600 mr-2 font-medium
   }
 }
