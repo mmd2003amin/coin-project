@@ -7,6 +7,7 @@ import Pagination from './Pagination';
 import Search from './Search';
 import ChartBox from './ChartBox';
 import Cards from './Cards';
+import Footer from './Footer';
 
 const App = () => {
   const [ showMenu , setShowMenu ] = useState(false);
@@ -16,7 +17,7 @@ const App = () => {
   const [ chart , setChart ] = useState(null);
 
   return (
-    <div className='bg-stone-950 min-h-[100vh] h-full'>
+    <div className='bg-stone-950 min-h-[100vh] h-full pb-1'>
       <Navbar showMenu={showMenu} setShowMenu={setShowMenu} />
       <Menu showMenu={showMenu} setShowMenu={setShowMenu} />
       <Banner />
@@ -25,6 +26,7 @@ const App = () => {
       <Pagination page={page} setPage={setPage}/>
       {chart && <ChartBox chart={chart} setChart={setChart} currency={currency}/>}
       <Cards />
+      <Footer />
     </div>
   );
 };

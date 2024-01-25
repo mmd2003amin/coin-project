@@ -14,18 +14,18 @@ const Pagination = ({ page, setPage }) => {
   };
 
   return (
-    <div dir="ltr" className="text-white centering py-5 font-vazirRegular buttons-pagination">
-      <div onClick={previousPage} className={`${page === 1 && "opacity-40"} next-b mr-3`}>قبلی</div>
+    <div dir="ltr" className="text-white w-[99%] mx-auto centering py-5 font-vazirRegular buttons-pagination">
+      <div onClick={previousPage} className={`${page === 1 && "opacity-40"} next-b mr-0.5 xs:mr-3`}>قبلی</div>
       <button onClick={pageHandler} className={`${page === 1 && "bg-blue-600"}`}>1</button>
       <button onClick={pageHandler} className={`${page === 2 && "bg-blue-600"}`}>2</button>
 
       {page > 2 && page < 9 && (
         <>
-          <span className="mr-1">...</span>
-          <button className={`ml-1 bg-blue-600`}>{page}</button>
+          <span className="mr-0.5 xs:mr-1">...</span>
+          <button className={`ml-0.5 xs:ml-1 bg-blue-600`}>{page}</button>
         </>
       )}
-      <span className="mr-1">...</span>
+      <span className="ml-0.5 xs:ml-0 mr-0.5 xs:mr-1">...</span>
 
       <button onClick={pageHandler} className={`${page === 9 && "bg-blue-600"} ml-1`}>9</button>
       <button onClick={pageHandler} className={`${page === 10 && "bg-blue-600"}`}>10</button>
