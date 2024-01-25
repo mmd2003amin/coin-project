@@ -6,6 +6,7 @@ import CoinList from './CoinList';
 import Pagination from './Pagination';
 import Search from './Search';
 import ChartBox from './ChartBox';
+import Cards from './Cards';
 
 const App = () => {
   const [ showMenu , setShowMenu ] = useState(false);
@@ -23,6 +24,7 @@ const App = () => {
       <CoinList page={page} search={search} currency={currency} setChart={setChart}/>
       <Pagination page={page} setPage={setPage}/>
       {chart && <ChartBox chart={chart} setChart={setChart} currency={currency}/>}
+      <Cards />
     </div>
   );
 };
