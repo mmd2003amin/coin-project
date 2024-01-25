@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getCoinList, marketChart } from "../services/cryptoAPI";
 import { PiChartLineDownBold, PiChartLineUpBold } from "react-icons/pi";
-import loading from "../assets/loading.gif";
+import Loader from "./Loader";
 
 const CoinList = ({ page, search, currency, setChart }) => {
   const [data, setData] = useState([]);
@@ -11,11 +11,11 @@ const CoinList = ({ page, search, currency, setChart }) => {
     coin.name.toUpperCase().includes(search)
   );
 
-  const showChart = async (id , coin) => {
+  const showChart = async (id, coin) => {
     try {
       const fetching = await fetch(marketChart(id));
       const toJson = await fetching.json();
-      setChart({ ...toJson , coin });
+      setChart({ ...toJson, coin });
     } catch {
       setChart(null);
     }
@@ -42,9 +42,9 @@ const CoinList = ({ page, search, currency, setChart }) => {
         <div
           className={`${
             !data.length && "hidden"
-          } text-sm xs:text-base font-vazirRegular md:font-vazirMedium text-white w-[95%] md:w-[85%] p-2 xs:p-5 rounded-md border border-solid border-white mx-auto mt-10`}
+          } text-sm xs:text-base font-vazirRegular md:font-vazirMedium text-white dark:text-black w-[95%] md:w-[85%] p-2 xs:p-5 rounded-md border border-solid border-white dark:border-black mx-auto mt-10`}
         >
-          <div className="hidden md:flex centering justify-between bg-stone-900 rounded-md p-5 mb-8">
+          <div className="hidden md:flex centering justify-between bg-stone-900 dark:bg-white rounded-md p-5 mb-8">
             <h3>نماد</h3>
             <h3>نام</h3>
             <h3>آخرین‌قیمت</h3>
@@ -56,7 +56,7 @@ const CoinList = ({ page, search, currency, setChart }) => {
             <div
               onClick={() => showChart(coin.id, coin)}
               key={coin.id}
-              className="centering justify-between p-4 mt-2 bg-stone-900 md:bg-transparent hover:bg-stone-900 duration-150 cursor-pointer rounded-md"
+              className="centering justify-between p-4 mt-2 bg-stone-900 dark:bg-white hover:bg-stone-900 dark:hover:bg-white md:bg-transparent dark:md:bg-transparent duration-150 cursor-pointer rounded-md"
             >
               <img
                 src={coin.image}
@@ -78,7 +78,7 @@ const CoinList = ({ page, search, currency, setChart }) => {
                   coin.price_change_percentage_24h > 0
                     ? "bg-green-600"
                     : "bg-red-600"
-                } p-1.5 rounded-md`}
+                } p-1.5 rounded-md text-white`}
               >
                 {coin.price_change_percentage_24h.toFixed(2)} %
               </p>
@@ -92,7 +92,7 @@ const CoinList = ({ page, search, currency, setChart }) => {
           ))}
         </div>
       ) : (
-        <img src={loading} alt="loading" className="size-28 mx-auto mt-10" />
+        <Loader />
       )}
     </>
   );

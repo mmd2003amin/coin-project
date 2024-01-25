@@ -30,11 +30,16 @@
   }
 
   .button {
-    @apply p-1.5 rounded-md border border-solid border-white w-[70px] cursor-pointer;
+    @apply p-1.5 rounded-md border border-solid border-white dark:border-black w-[70px] cursor-pointer;
   }
 
   .bg-blur {
     background: rgba(28, 25, 23, 0.72);
+    backdrop-filter: blur(20px);
+  }
+
+  .bg-blur-light {
+    background: rgba(255, 255, 255, 0.72);
     backdrop-filter: blur(20px);
   }
 
@@ -57,7 +62,7 @@
   }
 
   .dark-mode-icon {
-    @apply cursor-pointer border border-white border-solid p-2 rounded-full;
+    @apply cursor-pointer border border-white dark:border-black border-solid p-2 rounded-full;
   }
 
   .buttons-pagination button {
@@ -74,6 +79,14 @@
 
   .about-chart h5 {
     @apply text-blue-600 mr-2 font-medium;
+  }
+
+  .select-chart {
+    @apply bg-blue-600 dark:text-white
+  }
+
+  .select-pagination {
+    @apply bg-blue-600 dark:text-white
   }
 
   .footer-items li {

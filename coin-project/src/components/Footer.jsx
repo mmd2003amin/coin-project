@@ -6,13 +6,13 @@ import { dataFooter } from "../../constant/dataFooter";
 const Footer = () => {
   return (
     <div
-      className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 bg-stone-900 mx-auto max-w-[90%] sm:max-w-[80%] lg:max-w-[85%] rounded-md mt-16 text-center p-5`}
+      className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 bg-stone-900 dark:bg-white mx-auto max-w-[90%] sm:max-w-[80%] lg:max-w-[85%] rounded-md mt-16 text-center p-5`}
     >
       {dataFooter.map((item) => (
         <FooterItems key={Math.random() * 100} data={item} />
       ))}
 
-      <h1 className="font-vazirExtraBold font-black text-white mb-2.5 lg:mb-5 text-lg lg:text-[20px]">
+      <h1 className="font-vazirExtraBold font-black text-white dark:text-black mb-2.5 lg:mb-5 text-lg lg:text-[20px]">
         از آخرین اخبار باخبر شوید
       </h1>
 

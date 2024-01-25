@@ -3,11 +3,11 @@ import React from "react";
 const Search = ({ currency , setCurrency, setSearch }) => {
 
   return (
-    <div className="centering mt-28 w-[80%] lg:w-[60%] mx-auto">
+    <div className="centering mt-28 w-[80%] lg:w-[60%] mx-auto text-white dark:text-black">
       <select
         value={currency}
         onChange={(event) => setCurrency(event.target.value)}
-        className="bg-stone-900 text-white p-4 rounded-md ml-2 outline-none"
+        className="bg-stone-900 dark:bg-white p-4 rounded-md ml-2 outline-none"
       >
         <option value="usd">USD</option>
         <option value="eur">EUR</option>
@@ -18,7 +18,7 @@ const Search = ({ currency , setCurrency, setSearch }) => {
         type="text"
         placeholder="جستجو..."
         onChange={(event) => setSearch(event.target.value.trim().toUpperCase())}
-        className="bg-stone-900 outline-none rounded-md w-[90%] text-white p-2 h-14 placeholder:text-stone-400 font-vazirMedium text-base font-bold"
+        className="bg-stone-900 dark:bg-white outline-none rounded-md w-[90%] p-2 h-14 placeholder:text-stone-400 font-vazirMedium text-base font-bold"
       />
     </div>
   );

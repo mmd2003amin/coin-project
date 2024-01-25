@@ -29,7 +29,7 @@ const ChartBox = ({ chart, setChart, currency }) => {
         className="bg-red-600 text-white rounded-md text-4xl top-7 right-7 absolute cursor-pointer"
       />
 
-      <div className="text-white bg-blur centering items-start justify-around flex-col border border-solid border-white w-[96%] md:w-10/12 lg:w-[60%] h-4/6 p-3 xs:p-5 rounded-md">
+      <div className="text-white dark:text-black bg-blur dark:bg-blur-light centering items-start justify-around flex-col border border-solid border-white dark:border-black w-[96%] md:w-10/12 lg:w-[60%] h-4/6 p-3 xs:p-5 rounded-md">
         <div className="centering ml-[3%] font-medium">
           <img
             src={chart.coin.image}
@@ -44,13 +44,13 @@ const ChartBox = ({ chart, setChart, currency }) => {
         </div>
 
         <div onClick={typeHandler} className="text-sm xs:text-base centering mx-auto xs:ml-[3%] buttons-chart">
-          <button className={`${type === "prices" && "bg-blue-600"}`}>
+          <button className={`${type === "prices" && "select-chart"}`}>
             Prices
           </button>
-          <button className={`${type === "market_caps" && "bg-blue-600"}`}>
+          <button className={`${type === "market_caps" && "select-chart"}`}>
             Market Caps
           </button>
-          <button className={`${type === "total_volumes" && "bg-blue-600"}`}>
+          <button className={`${type === "total_volumes" && "select-chart"}`}>
             Total Volumes
           </button>
         </div>
