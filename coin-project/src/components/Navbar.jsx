@@ -8,7 +8,7 @@ import pages from "../../constant/pages";
 
 const Navbar = ({ setShowMenu, theme , setTheme }) => {
   return (
-    <div className="sticky top-0 centering justify-between bg-blur dark:bg-blur-light text-white dark:text-black font-vazirMedium p-4">
+    <div className="z-10 sticky top-0 centering justify-between bg-blur dark:bg-blur-light text-white dark:text-black font-vazirMedium p-4">
       <FaBitcoin className="font-b text-4xl dark:text-black" />
 
       <ul className="hidden md:flex w-[70%]">

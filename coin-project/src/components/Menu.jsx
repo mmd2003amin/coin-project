@@ -8,7 +8,7 @@ const Menu = ({ showMenu, setShowMenu , theme , setTheme }) => {
     <div
       className={`${
         showMenu ? "translate-x-0" : "translate-x-96"
-      } md:hidden duration-500 bg-stone-900 dark:bg-white text-white dark:text-black w-1/2 h-fit fixed top-0 p-4 rounded-l-lg`}
+      } md:hidden duration-500 z-20 bg-stone-900 dark:bg-white text-white dark:text-black w-1/2 h-fit fixed top-0 p-4 rounded-l-lg`}
     >
       <IoCloseSharp
         onClick={() => setShowMenu(!showMenu)}
